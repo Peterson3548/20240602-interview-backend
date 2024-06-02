@@ -11,7 +11,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => fake()->unique()->name('產品名稱'),
-            'brand_id' => Brand::inRandomOrder()->first(),
+            'brand_id' => Brand::factory()->create(),
             'official_price' => fake()->randomNumber(),
             'actual_price' => fake()->randomNumber(),
             'image_path' => '123',
