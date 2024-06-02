@@ -9,12 +9,12 @@ class BrandSeeder extends Seeder
 {
     public function run(): void
     {
-        Brand::firstOrCreate([
-            'name' => 'acer',
-        ]);
+        $brands = collect(['toshiba', 'asus', 'msi', 'acer', 'avita']);
 
-        Brand::firstOrCreate([
-            'name' => 'logitech',
-        ]);
+        $brands->each(function (string $name) {
+            Brand::firstOrCreate([
+                'name' => $name,
+            ]);
+        });
     }
 }
